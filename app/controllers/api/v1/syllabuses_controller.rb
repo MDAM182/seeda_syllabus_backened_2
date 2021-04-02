@@ -1,7 +1,8 @@
 class Api::V1::SyllabusesController < ApplicationController
   def index
-    @ayllabuses = Syllabus.all
-    render json: @syllabuses
+    @syllabuses = Syllabus.all
+    # render json: @syllabuses
+     render json: SyllabusSerializer.new(@syllabuses)
   end
 
   def create
