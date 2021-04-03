@@ -4,7 +4,7 @@ class CreateSyllabuses < ActiveRecord::Migration[5.2]
       t.string :title
       t.string :description
       t.string :image_url
-      t.references :category, foreign_key: true
+      
 
       t.timestamps
     end
