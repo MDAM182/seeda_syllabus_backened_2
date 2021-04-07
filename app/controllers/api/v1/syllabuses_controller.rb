@@ -7,6 +7,7 @@ class Api::V1::SyllabusesController < ApplicationController
 
   def create
     syllabus = Syllabus.new(syllabus_params)
+    # byebug
     if syllabus.save
         render json: SyllabusSerializer.new(syllabus), status: :accepted
     else
@@ -15,8 +16,8 @@ class Api::V1::SyllabusesController < ApplicationController
   end
 
   def syllabus_params
-    require(:syllabus).permit(:title, :description, :image_url, :category_id)
-    params.permit()
+    params.require(:syllabus).permit(:title, :description, :image_url, :category_id)
+    # params.permit()
   end
 
 end
